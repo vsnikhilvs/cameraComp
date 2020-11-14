@@ -1,0 +1,98 @@
+<div>
+    <img id="bgimage" src="/assets/bgtest1.jpg" />
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-6 col-sm-12">
+                <div style="height: 95%;">
+                    <p-pickList [source]="sourceProducts" [target]="targetProducts" sourceHeader="Available ({{total-count}})" 
+                    targetHeader="Selected ({{count}})" dragdrop="true"
+                    [sourceStyle]="{'height':'100%'}" [targetStyle]="{'height':'100%'}"
+                    filterBy="model" sourceFilterPlaceholder="Search by model" targetFilterPlaceholder="Search by model"
+                    [showSourceControls]=false [showTargetControls]=false [responsive]=true
+                    (onMoveToTarget)="counter()" (onMoveToSource)="counter()" [style]="{'background':'transparent'}">
+                        <ng-template let-product pTemplate="item">
+                            <div class="product-item" style="color: white;">
+                                <div class="image-container">
+                                        <img src="../../assets/{{product.image}}" width="120" height="100" [alt]="product.id" class="product-image" />
+                                </div>
+                                <div class="product-list-detail">
+                                    <h5 class="p-mb-2">{{product.model}}</h5>
+                                </div>
+                            </div>
+                        </ng-template>
+                    </p-pickList>
+                </div>
+                <div style="text-align: right;">
+                    <button pButton [disabled]="count <= 1" (click)="showModalDialog()" type="button" label="Compare" class="compBtn"><span class="p-overlay-badge mr-3"><span class="p-badge" id="badge">{{count}}</span></span></button>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <div class="heading">
+                    <div><img src="../../assets/icon.png" width="80" height="80" /></div>
+                    <span id="mainHead">Camera Comparison</span>
+                    <sub>Made for the photo geeks</sub>
+                    <h3>Compare cameras and decide your companion</h3>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <div class="courtesy">
+        <h6>~ Roman Vehicle</h6>
+    </div>
+</div>
+
+<p-dialog header="Comparison" [(visible)]="displayModal" [modal]="true" [style]="{width: '90vw'}" [baseZIndex]="10000"
+    [draggable]="false" [resizable]="false" [responsive]="true">
+        <p-table [value]="targetProducts" class="table table-sm table-striped table-hover">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>Model</th>
+                    <th>Compatible Lens</th>
+                    <th>Megapixels</th>
+                    <th>Sensor</th>
+                    <th>ISO</th>
+                    <th>Shutter Speed</th>
+                    <th>Focus Points</th>
+                    <th>Coverage</th>
+                    <th>FPS</th>
+                    <th>Flash available</th>
+                    <th>AF during video</th>
+                    <th>Media support</th>
+                    <th>Video Recording</th>
+                    <th>Dimensions</th>
+                    <th>Processor</th>
+                    <th>LCD details</th>
+                    <th>Weight</th>
+                    <th>Life</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-detail>
+                <tr>
+                    <td><strong>{{detail.model}}</strong></td>
+                    <td>{{detail.lens}}</td>
+                    <td>{{detail.megapixel}}</td>
+                    <td>{{detail.sensor}}</td>
+                    <td>{{detail.iso}}</td>
+                    <td>{{detail.shutterspeed}}</td>
+                    <td>{{detail.focuspoint}}</td>
+                    <td>{{detail.coverage}}</td>
+                    <td>{{detail.fps}}</td>
+                    <td>{{detail.flash}}</td>
+                    <td>{{detail.afvideo}}</td>
+                    <td>{{detail.media}}</td>
+                    <td>{{detail.video}}</td>
+                    <td>{{detail.dimension}}</td>
+                    <td>{{detail.processor}}</td>
+                    <td>{{detail.lcd}}</td>
+                    <td>{{detail.weight}}</td>
+                    <td>{{detail.life}}</td>
+                </tr>
+            </ng-template>
+        </p-table>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-print" (click)="displayModal=false" label="Print" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>

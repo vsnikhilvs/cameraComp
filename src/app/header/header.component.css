@@ -1,0 +1,43 @@
+#bgimage {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+}
+.heading {
+    color: white;
+    padding-top: 17%;
+    text-align: center;
+    margin-bottom: 4%;
+}
+#mainHead {
+    font-size: 3rem;
+}
+sub {
+    bottom: -0.5rem !important;
+}
+.courtesy {
+    position: absolute;
+    color: #41414150;
+    bottom: 0;
+    right: 0;
+}
+.content {
+    /* border: 2px solid red; */
+    padding-top: 4%;
+    padding-left: 3%;
+}
+.compBtn {
+    background: #00000000 !important;
+    border-color: white !important;
+}
+.compBtn:hover {
+    background: rgb(1, 1, 78) !important;
+    /* border-color: rgb(1, 1, 78) !important; */
+}
+.compBtn:focus {
+    box-shadow: 0 0 0 0#00000000 !important;
+}
+#badge{
+    background: #00000000 !important;
+}

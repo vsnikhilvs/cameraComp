@@ -1,0 +1,20 @@
+export interface Product {
+    model?:string;
+    lens?:string;
+    megapixels?:string;
+    sensor?:string;
+    iso?:number;
+    shutterspeed?:number;
+    focuspoint?:string;
+    coverage?:string;
+    fps?:string;
+    flash?:number;
+    afvideo?:number;
+    media?:number;
+    video?:number;
+    dimension?:number;
+    processor?:number;
+    lcd?:number;
+    weight?:number;
+    life?:number;
+}
