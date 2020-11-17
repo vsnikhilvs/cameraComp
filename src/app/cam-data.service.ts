@@ -1,14 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Product } from './header/product';
+import { Item } from './item';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class CamDataService {
-  status: string[] = ['OUTOFSTOCK', 'INSTOCK', 'LOWSTOCK'];
+
+  camera: AngularFirestoreCollection<Item>;
+  cameras: Observable<Item[]>;
+
   constructor(
-    private http: HttpClient
-  ) { }
+    private http: HttpClient,
+    public afs: AngularFirestore
+  ) {
+    this.cameras = this.afs.collection('cameras').valueChanges();
+  }
+ 
+  getItems() {
+    return this.cameras;
+  }
 
   getData() {
     return this.http.get<any>("http://localhost:3000/data");
@@ -18,3 +31,4 @@ export class CamDataService {
   }
 
 }
+

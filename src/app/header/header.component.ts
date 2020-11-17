@@ -29,11 +29,15 @@ export class HeaderComponent implements OnInit {
   total = 0;
   
   constructor(
-    private camdataService: CamDataService
+    public camdataService: CamDataService
   ) {}
 
   ngOnInit() {
-    this.camdataService.getData().subscribe(
+    // this.camdataService.getItems().subscribe(items => {
+    //   console.log(items);
+    //   this.sourceProducts = items;
+    // });
+    this.camdataService.getItems().subscribe(
       (res) => {
         this.sourceProducts = res;
         for(let item of this.sourceProducts){
