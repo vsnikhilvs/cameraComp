@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 import {FormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
@@ -17,7 +17,6 @@ import {TableModule} from 'primeng/table';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { HomeComponent } from './home/home.component';
 
 import { CamDataService } from './cam-data.service';
 
@@ -25,7 +24,6 @@ import { CamDataService } from './cam-data.service';
   declarations: [
     AppComponent,
     HeaderComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
