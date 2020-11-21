@@ -1,6 +1,5 @@
 {
   "projects": {
-    "default": "camera-comparis",
-    "camera": "camera-comparis"
+    "default": "camera-comparis"
   }
 }

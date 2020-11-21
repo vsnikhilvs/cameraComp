@@ -14,7 +14,7 @@ export class CamDataService {
 
   constructor(
     private http: HttpClient,
-    public afs: AngularFirestore
+    public afs: AngularFirestore,
   ) {
     this.cameras = this.afs.collection('cameras').valueChanges();
   }

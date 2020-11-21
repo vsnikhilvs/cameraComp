@@ -14,7 +14,11 @@
                         <ng-template let-product pTemplate="item">
                             <div class="product-item" style="color: white;">
                                 <div class="image-container">
-                                        <img src="../../assets/{{product.image}}" width="100" height="80" [alt]="product.id" class="product-image" />
+                                    <div *ngFor="let item of list" >
+                                        <div *ngIf="item.key == product.id">
+                                            <img src="{{item.value}}" width="100" height="80" [alt]="product.id" class="product-image" />
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="product-list-detail">
                                     <h5 class="p-mb-2">{{product.model}}</h5>
@@ -45,7 +49,7 @@
 </div>
 
 <p-dialog header="Comparison" [(visible)]="displayModal" [modal]="true" [style]="{width: '90vw'}" [baseZIndex]="10000"
-    [draggable]="false" [resizable]="false" [responsive]="true">
+    [draggable]="false" [resizable]="false">
         <p-table [value]="targetProducts" class="table table-sm table-striped table-hover">
             <ng-template pTemplate="header">
                 <tr>
@@ -92,7 +96,7 @@
                 </tr>
             </ng-template>
         </p-table>
-    <ng-template pTemplate="footer">
+    <!-- <ng-template pTemplate="footer">
         <p-button icon="pi pi-print" (click)="displayModal=false" label="Print" styleClass="p-button-text"></p-button>
-    </ng-template>
+    </ng-template> -->
 </p-dialog>
