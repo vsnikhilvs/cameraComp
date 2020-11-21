@@ -25,9 +25,6 @@ export class CamDataService {
 
   getData() {
     return this.http.get<any>("http://localhost:3000/data");
-    // .toPromise()
-    // .then(res => <Product[]>res.data)
-    // .then(data => { return data;})
   }
 
 }

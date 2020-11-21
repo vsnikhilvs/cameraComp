@@ -43,8 +43,6 @@ export class HeaderComponent implements OnInit {
         for(let item of this.sourceProducts){
           this.total++;
         }
-        console.log(this.total);
-        console.log(this.sourceProducts);
     }, (err) => {
       console.log(err);
     });
@@ -60,11 +58,6 @@ export class HeaderComponent implements OnInit {
     for(let item of this.targetProducts){
       this.count++;
     }
-    console.log(this.count);
-  }
-
-  compare() {
-    console.log(this.targetProducts, this.count);
   }
 
 

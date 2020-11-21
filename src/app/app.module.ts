@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAnalyticsModule } from '@angular/fire/analytics';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from '../environments/environment';
+import { environment } from '../environments/environment.prod';
 
 import {FormsModule} from '@angular/forms';
 import {ButtonModule} from 'primeng/button';
