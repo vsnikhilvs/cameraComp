@@ -59,9 +59,4 @@ export class HeaderComponent implements OnInit {
       this.count++;
     }
   }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 5a3de04919d91aa64ac5414feaafb27e79dd5348
 }
